@@ -5,7 +5,11 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_PATH="$SCRIPT_DIR/Untranslocator.xcodeproj"
 TARGET_NAME="Untranslocator"
 CONFIGURATION="${CONFIGURATION:-Release}"
-OUTPUT_ROOT="$SCRIPT_DIR/build"
+if [[ "${OUT_DIR:-}" != "" ]]; then
+  OUTPUT_ROOT="${OUT_DIR}/native_lib"
+else
+  OUTPUT_ROOT="${SCRIPT_DIR}/build"
+fi
 OUTPUT_DIR="$OUTPUT_ROOT/output"
 INCLUDE_DIR="$OUTPUT_DIR/include"
 
@@ -17,6 +21,7 @@ fi
 
 rm -rf "$OUTPUT_ROOT"
 mkdir -p "$OUTPUT_DIR" "$INCLUDE_DIR"
+cd "$OUTPUT_ROOT"
 
 LIB_INPUTS=()
 for arch in "${ARCHS[@]}"; do
@@ -31,6 +36,10 @@ for arch in "${ARCHS[@]}"; do
     -sdk macosx \
     -arch "$arch" \
     build \
+    OBJROOT="$OUTPUT_ROOT" \
+    SYMROOT="$OUTPUT_ROOT" \
+    PROJECT_TEMP_DIR="$OUTPUT_ROOT" \
+    CONFIGURATION_TEMP_DIR="$OUTPUT_ROOT" \
     CONFIGURATION_BUILD_DIR="$ARCH_DIR" \
     > "$ARCH_DIR/build.log"
 
@@ -41,6 +50,9 @@ for arch in "${ARCHS[@]}"; do
 
   LIB_INPUTS+=("$ARCH_LIB")
 done
+
+# remove temp files created by xcodebuild
+rm -rf "$PROJECT_PATH/project.xcworkspace/xcshareddata/swiftpm"
 
 OUTPUT_LIB="$OUTPUT_DIR/libUntranslocator.a"
 if (( ${#LIB_INPUTS[@]} == 1 )); then

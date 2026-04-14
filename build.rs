@@ -40,7 +40,8 @@ fn main() {
         panic!("native build failed with status: {status}");
     }
 
-    let native_output_dir = native_dir.join("build").join("output");
+    let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
+    let native_output_dir = out_dir.join("native_lib").join("output");
     println!("cargo:rustc-link-search=native={}", native_output_dir.display());
     println!("cargo:rustc-link-lib=static=Untranslocator");
     println!("cargo:rustc-link-lib=framework=Cocoa");
