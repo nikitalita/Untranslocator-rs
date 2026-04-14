@@ -3,6 +3,9 @@ use std::path::PathBuf;
 use std::process::Command;
 
 fn main() {
+    #[cfg(not(target_os = "macos"))]
+    compile_error!("untranslocator only supports macOS targets");
+
     println!("cargo:rerun-if-changed=Untranslocator.Lib/build-lib.sh");
     println!("cargo:rerun-if-changed=Untranslocator.Lib/Untranslocator/Untranslocator.h");
     println!("cargo:rerun-if-changed=Untranslocator.Lib/Untranslocator/Untranslocator.m");
