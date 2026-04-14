@@ -8,7 +8,7 @@ use std::fmt;
 use std::os::raw::c_char;
 use std::path::{Path, PathBuf};
 
-#[cfg(not(target_os = "macos"))]
+#[cfg(all(not(target_os = "macos"), not(docsrs)))]
 compile_error!("The untranslocator crate only supports macOS targets.");
 
 /// Raw native bindings.
