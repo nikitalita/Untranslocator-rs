@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		B210C9B4252B13F7000E179E /* Untranslocator.h in Headers */ = {isa = PBXBuildFile; fileRef = B210C9B3252B13F7000E179E /* Untranslocator.h */; };
 		B210C9B6252B13F7000E179E /* Untranslocator.m in Sources */ = {isa = PBXBuildFile; fileRef = B210C9B5252B13F7000E179E /* Untranslocator.m */; };
+		B2A3D00152DE0000000F1001 /* untranslocator_c.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A3D00352DE0000000F1001 /* untranslocator_c.h */; };
+		B2A3D00252DE0000000F1001 /* untranslocator_c.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3D00452DE0000000F1001 /* untranslocator_c.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B210C9B0252B13F7000E179E /* libUntranslocator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUntranslocator.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B210C9B3252B13F7000E179E /* Untranslocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Untranslocator.h; sourceTree = "<group>"; };
 		B210C9B5252B13F7000E179E /* Untranslocator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Untranslocator.m; sourceTree = "<group>"; };
+		B2A3D00352DE0000000F1001 /* untranslocator_c.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = untranslocator_c.h; sourceTree = "<group>"; };
+		B2A3D00452DE0000000F1001 /* untranslocator_c.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = untranslocator_c.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,8 @@
 			children = (
 				B210C9B3252B13F7000E179E /* Untranslocator.h */,
 				B210C9B5252B13F7000E179E /* Untranslocator.m */,
+				B2A3D00352DE0000000F1001 /* untranslocator_c.h */,
+				B2A3D00452DE0000000F1001 /* untranslocator_c.m */,
 			);
 			path = Untranslocator;
 			sourceTree = "<group>";
@@ -61,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B210C9B4252B13F7000E179E /* Untranslocator.h in Headers */,
+				B2A3D00152DE0000000F1001 /* untranslocator_c.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B210C9B6252B13F7000E179E /* Untranslocator.m in Sources */,
+				B2A3D00252DE0000000F1001 /* untranslocator_c.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

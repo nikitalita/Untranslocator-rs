@@ -1,0 +1,15 @@
+[package]
+name = "untranslocator"
+version = "0.1.0"
+edition = "2021"
+description = "Resolve original app bundle paths from macOS App Translocation."
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/nor0x/Untranslocator-XMac"
+keywords = ["macos", "path", "security", "translocation"]
+categories = ["api-bindings", "os::macos-apis"]
+build = "build.rs"
+
+[lib]
+name = "untranslocator"
+path = "src/lib.rs"
