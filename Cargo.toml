@@ -1,6 +1,6 @@
 [package]
 name = "untranslocator"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Untranslocator allows to get the original bundle path from a translocated macOS app."
 license = "MIT"
