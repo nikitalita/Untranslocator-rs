@@ -1,10 +1,8 @@
 <img src="https://raw.githubusercontent.com/nor0x/Untranslocator-XMac/main/art/logo.png" width="200px" />
 
 # Untranslocator
-[![Build Status](https://nor0x.visualstudio.com/Untranslocator/_apis/build/status/nor0x.Untranslocator-XMac?branchName=main)](https://nor0x.visualstudio.com/Untranslocator/_build/latest?definitionId=9&branchName=main) [![](https://img.shields.io/nuget/vpre/nor0x.Untranslocator.svg)](https://nuget.org/packages/nor0x.Untranslocator)
-[![](https://img.shields.io/nuget/dt/nor0x.Untranslocator)](https://nuget.org/packages/nor0x.Untranslocator)
 
-Untranslocator allows to get the original bundle path from a translocated Xamarin.Mac app. 
+Untranslocator allows to get the original bundle path from a translocated macOS app.
 ## Usage
 if a macOS app is translocated `NSBundle.MainBundle.BundlePath` returns a randomized read-only location - something like:
 ```
